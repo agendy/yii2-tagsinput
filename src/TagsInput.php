@@ -63,5 +63,4 @@ class TagsInput extends InputWidget
             $this->view->registerJs(implode(PHP_EOL, $js));
         }
     }
-
 }
