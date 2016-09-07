@@ -5,7 +5,7 @@
  * @link https://rmrevin.ru
  */
 
-namespace efureev\fontawesome\tests\unit;
+namespace efureev\tests\unit;
 
 use yii\helpers\ArrayHelper;
 
