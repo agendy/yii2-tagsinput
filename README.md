@@ -65,3 +65,7 @@ inputUsers.tagsinput({
 );
 ?>
 ```
+
+# Tests
+
+`vendor/bin/phpunit`
