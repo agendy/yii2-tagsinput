@@ -16,8 +16,13 @@ class TagsInput extends InputWidget
 
     public $options = ['class' => 'form-control'];
 
+    /** @var string Code prepend tagsinput */
+    public $preJS;
+
+    /** @var array tagsinput Options */
     public $clientOptions = [];
 
+    /** @var array tagsinput Events */
     public $clientEvents = [];
 
     public function init()
@@ -46,9 +51,13 @@ class TagsInput extends InputWidget
 
     public function registerScript()
     {
+        $js = [];
+        if (!empty($this->preJS))
+            $js[] = ';' . $this->preJS;
+
         $clientOptions = empty($this->clientOptions) ? '' : Json::encode($this->clientOptions);
-        $js = "jQuery('#{$this->options["id"]}').tagsinput({$clientOptions});";
-        $this->view->registerJs($js);
+        $js[] = "jQuery('#{$this->options["id"]}').tagsinput({$clientOptions});";
+        $this->view->registerJs(implode(PHP_EOL, $js));
     }
 
     public function registerEvent()
