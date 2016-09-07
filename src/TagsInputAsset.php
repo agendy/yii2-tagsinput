@@ -18,7 +18,7 @@ class TagsInputAsset extends \yii\web\AssetBundle
     ];
 
     public $css = [
-        'dist/bootstrap-tagsinput.css'
+        'dist/bootstrap-tagsinput.min.css',
     ];
 
     public $depends = [
